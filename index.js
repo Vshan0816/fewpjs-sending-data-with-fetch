@@ -11,12 +11,12 @@ function submitData(name,email) {
             email: `${email}`
         })
     };
-    fetch("http://localhost:3000/users", configObj) 
+    return fetch("http://localhost:3000/users", configObj) 
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
-        document.body.append(data[0].id)
+        document.body.append(data.id)
     })
     .catch(function(error) {
         alert("Bad things! Ragnarők!");
